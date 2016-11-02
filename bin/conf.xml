@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<!-- 将数据库的配置写进properties文件中 -->
+<properties resource="db.properties"/>
+
+<!-- 为实体类配置别名方便使用 -->
+<typeAliases>
+	<!-- 	其中typeAlias表示给实体类取别名；其中package表示给包取别名，推荐使用给包取别名-->
+	<!-- <typeAlias type="com.wushengde.myselfmybatis.User" alias="_User"/> -->
+	<!-- 当给包取别名时，在这个包中的SQL映射文件中调用实体类时直接写实体类的类名即可 -->
+	<package name="com.wushengde.myselfmybatis"/>
+</typeAliases>
+
+
+<environments default="development">
+<environment id="development">
+<transactionManager type="JDBC" />
+<dataSource type="POOLED">
+<property name="driver" value="${driver}" />
+<property name="url" value="${url}"/>
+<property name="username" value="${name}" />
+<property name="password" value="${password}" />
+</dataSource>
+</environment>
+</environments>
+<mappers>
+	<mapper resource="com/wushengde/myselfmybatis/userMapper.xml"/>
+</mappers>
+</configuration>
