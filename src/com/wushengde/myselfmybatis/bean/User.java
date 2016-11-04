@@ -1,4 +1,4 @@
-package com.wushengde.myselfmybatis;
+package com.wushengde.myselfmybatis.bean;
 
 public class User {
 	private int id;

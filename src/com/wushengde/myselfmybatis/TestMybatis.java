@@ -10,6 +10,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
 
+import com.wushengde.myselfmybatis.bean.User;
+
 public class TestMybatis {
 	//测试：根据ID查询该ID所对应的用户：
 	public static void main(String[] args)throws IOException {
