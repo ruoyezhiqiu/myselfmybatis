@@ -13,10 +13,12 @@
 		SELECT * FROM teacher WHERE t_id=1; ##根据上一句得到的班级信息中的teacher_id查询相应的老师
 	 -->
 	 <!-- 此处的resultMap的值为该标签的id值：表示返回结果需要封装 -->
+	 
+	 <!-- 方式一：联合查询 -->
 	 <select id="getClass" parameterType="int" resultMap="ClassResultMap">
 	 	SELECT * FROM class c ,teacher t WHERE c.teacher_id=t.t_id AND c.c_id=1
 	 </select>
-	 <!-- 将班级封装到结果集中去，type表示要封装的类名，id为resultmap的唯一标识 -->
+	 <!-- 将查询的班级信息封装到结果集中去，type表示要封装的类名，id为resultmap的唯一标识 -->
 	 <resultMap type="Classes" id="ClassResultMap">
 	 	<id property="id" column="c_id"/>
 	 	<result property="name" column="c_name"/>
@@ -25,4 +27,18 @@
 	 		<result property="name" column="t_name"/> 
 	 	</association>
 	 </resultMap>
+	 
+	 <!-- 方式二：嵌套查询 -->
+	 <select id="getClass2" parameterType="int" resultMap="ClassResultMap2">
+	 	select * from class where c_id=#{id}
+	 </select>
+	 <resultMap type="Classes" id="ClassResultMap2">
+	 	<id property="id" column="c_id"/>
+	 	<result property="name" column="c_name"/>
+	 	<association property="teacher" column="teacher_id" select="getTeacher" javaType="Teacher"></association>
+	 </resultMap>
+	 <select id="getTeacher" parameterType="int" resultType="Teacher">
+	 	select t_id id,t_name name from teacher where t_id=#{id}
+	 </select>
+	 
 </mapper>

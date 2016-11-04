@@ -14,7 +14,7 @@ public class TestClasses {
 		InputStream inputStream = TestClasses.class.getClassLoader().getResourceAsStream(resource);
 		SqlSessionFactory factory=new SqlSessionFactoryBuilder().build(inputStream);
 		SqlSession session=factory.openSession();
-		String statement="com.wushengde.myselfmybatis.test20161104.classMapper.getClass";
+		String statement="com.wushengde.myselfmybatis.test20161104.classMapper.getClass2";
 		Classes classes=session.selectOne(statement, 2);
 		session.close();
 		System.out.println(classes);
