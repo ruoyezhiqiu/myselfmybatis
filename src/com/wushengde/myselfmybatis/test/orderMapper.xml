@@ -3,7 +3,8 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wushengde.myselfmybatis.test.orderMapper">
 	<!-- 根据ID查询orders表获得一个order对象 -->
-	<!-- 使用别名解决字段名与实体类属性名不一致导致的冲突问题 -->
+	<!-- 使用别名解决字段名与实体类属性名不一致导致的冲突问题一下注释部分为此例子 -->
+	<!-- 以下方式采用的是resultMap属性封装结果集来解决此冲突 -->
 	<select id="getOrder" parameterType="int" resultMap="getOrderMap">
 		<!-- select order_id id,order_no orderNo,order_price price from orders 
 			where order_id=#{id} -->

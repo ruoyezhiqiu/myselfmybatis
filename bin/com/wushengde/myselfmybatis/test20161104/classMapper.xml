@@ -38,7 +38,7 @@
 	 	<association property="teacher" column="teacher_id" select="getTeacher" javaType="Teacher"></association>
 	 </resultMap>
 	 <select id="getTeacher" parameterType="int" resultType="Teacher">
-	 	select t_id id,t_name name from teacher where t_id=#{id}
+	 	select t_id id,t_name name from teacher where t_id=#{id}<!-- 此处的id为：teacher_id来传入的 -->
 	 </select>
 	 
 </mapper>

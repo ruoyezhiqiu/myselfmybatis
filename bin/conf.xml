@@ -4,7 +4,6 @@
 
 <!-- 将数据库的配置写进properties文件中 -->
 <properties resource="db.properties"/>
-
 <!-- 为实体类配置别名方便使用 -->
 
 <typeAliases>
