@@ -1,9 +1,20 @@
 package com.wushengde.myselfmybatis.bean;
 
+import java.util.List;
+
 public class Classes {
 	private int id;
 	private String name;
 	private Teacher teacher;
+	private List<Student> students;
+	
+	public Classes(int id, String name, Teacher teacher, List<Student> students) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.teacher = teacher;
+		this.students = students;
+	}
 	public Classes(int id, String name, Teacher teacher) {
 		super();
 		this.id = id;
@@ -33,8 +44,9 @@ public class Classes {
 	}
 	@Override
 	public String toString() {
-		return "Classes [id=" + id + ", name=" + name + ", teacher=" + teacher + "]";
+		return "Classes [id=" + id + ", name=" + name + ", teacher=" + teacher + ", students=" + students + "]";
 	}
+
 	
 	
 }

@@ -8,7 +8,7 @@
 		## 方式一：联表查询
 		SELECT * FROM class c ,teacher t WHERE c.teacher_id=t.t_id AND c.c_id=1;
 		
-		## 方式二：执行两次查询
+		## 方式二：执行嵌套查询
 		SELECT * FROM class WHERE c_id=1; ##这句得到id=1的班级信息
 		SELECT * FROM teacher WHERE t_id=1; ##根据上一句得到的班级信息中的teacher_id查询相应的老师
 	 -->

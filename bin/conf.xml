@@ -29,5 +29,7 @@
 	<mapper resource="com/wushengde/myselfmybatis/userMapper.xml"/>
 	<mapper resource="com/wushengde/myselfmybatis/test/orderMapper.xml"/>
 	<mapper resource="com/wushengde/myselfmybatis/test20161104/classMapper.xml"/>
+	<mapper resource="com/wushengde/myselfmybatis/test2016110701/classMapper.xml"/>
+	<mapper resource="com/wushengde/myselfmybatis/test2016110702/userMapper.xml"/>
 </mappers>
 </configuration>
